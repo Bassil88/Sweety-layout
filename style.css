@@ -1,0 +1,252 @@
+:root{
+    font-size:  62.5%;
+}
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    --nav-bg:#fefffe;
+    --main-bgc:#efefee;
+    --div-bg:#e0fdf6;
+    --btn-bgc:#fe227c;
+    --shadow:#d9dcda;
+}
+
+body{
+    background: var(--main-bgc);
+    height: 200vh;
+    width: 100vw;
+}
+
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+img{
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+
+/* -----------------header section------------------ */
+header{
+    position: fixed;
+}
+
+header h1:not(article h1){
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+
+/* -----------------navbar START------------------- */
+
+
+
+/* ---------header> section> grid-container---------------- */
+
+
+.grid-container{
+    width: 100vw;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 130px 1fr 130px  ;background-color: white;
+    grid-template-areas: 
+    'logo hn bn';
+
+    /* 
+------NOTE!:
+
+logo: h1
+hn: hidden navbar
+nb: mobil version navbar
+
+    */
+}
+
+header h1:not(article h1){
+    grid-area: logo;
+}
+
+.hidden-navbar{
+    grid-area: hn;
+    display: contents;
+}
+
+.mobil-version-navbar{
+    grid-area: bn;
+
+}
+
+
+
+
+
+
+.hidden-navbar, .mobil-version-navbar{
+    /* background-color: rgb(247, 21, 21); */
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
+    margin: 0 0.1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobil-version-navbar li, .hidden-navbar li{
+    display: inline-block;
+    text-decoration: none;
+    list-style: none;
+    margin: 0 0.1rem;
+}
+
+.hidden-navbar li{
+    margin: 0 1rem;
+    font-size: 1.5rem;
+}
+
+.mobil-version-navbar button{
+    padding: 0.5rem;
+    border: none;
+}
+
+
+button:hover{
+    color: white;
+    background-color: var(--btn-bgc);
+}
+
+
+div div button,.shop-now__btn{
+    padding: 0.5rem;
+    background-color: var(--btn-bgc);
+}
+
+
+i{
+    color: #000;
+}
+
+i:hover{
+    color: white;
+}
+
+span{
+    color:var(--btn-bgc);
+}
+
+.shop-now__btn{
+    background-color: var(--btn-bgc);
+    padding: 5px 1.2rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    margin-left: 3rem;
+}
+
+article h1{
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+P{
+    margin-top: 0.5rem;
+    line-height: 2.5rem;
+    margin-left: 2rem;
+    font-size: 1.2rem;
+}
+/* -----------------navbar END--------------------- */
+
+
+
+/* -----------------Main STARTf--------------------- */
+.header-div{
+    
+    background-image: url(./images/sweetBg.jpg);
+    background-size: cover;
+    background-position:center center;
+    padding: 5rem;
+    height: 60vh;
+    width: 100%;
+    
+}
+
+article{
+    padding-top: 6rem;
+}
+
+
+/* -----------------Div section (flex)-------------- */
+
+.wrapper{
+    width: 80vw;
+    min-height: 100vh;
+    margin: 2rem auto;
+    text-align: center;
+
+}
+
+main div div{
+    background:var(--div-bg);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 2rem 10px var(--shadow) ;
+}
+
+main div div h3{
+    margin: 1rem;
+}
+
+.hidden-navbar ul li:hover{
+    border-bottom: 3.5px solid var(--btn-bgc);
+}
+
+@media (min-width:767px){
+    .wrapper{
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    main div div{
+        flex-basis: 32%;
+
+    
+    }
+    main div div:nth-last-child(1),
+    main div div:nth-last-child(2){
+        flex-basis: 49%;
+
+    }
+
+
+
+
+
+
+
+}
+
+@media (max-width:767px){
+    #hidden-navbar{
+        display: none;
+    }
+
+}
+
+
+
+
+
